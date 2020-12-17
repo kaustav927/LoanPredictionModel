@@ -257,12 +257,13 @@ export default {
         )
         .then(function (response) {
           // Handle success
-          console.log(response.text);
-          currentObj.output = response.data;
-          // this.result = 0;
-          // this.$nextTick(() => {
-          //   this.$bvModal.show('modal-result')
-          // })
+          //console.log(response);
+          const {status} = response.data
+          console.log(status)
+           this.result = status;
+           this.$nextTick(() => {
+             this.$bvModal.show('modal-result')
+           })
         })
         .catch(function (error) {
           currentObj.output = error;
