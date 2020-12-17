@@ -1,169 +1,196 @@
 <template>
   <div>
-    <b-form @submit="onSubmit" method="post" @reset="onReset" v-if="show">
-      <div class="container">
-        <b-row>
-          <b-col>
-            <b-form-group
-              id="input-group-2"
-              label="Income:"
-              label-for="input-2"
-            >
-              <b-form-input
-                id="input-2"
-                v-model="form.income"
-                placeholder="Enter Income"
-                required
-              ></b-form-input>
-            </b-form-group>
+    <b-row class="justify-content-center">
+      <b-col cols="8">
+        <div class="card p-4">
+          <b-form id="lpm-form" @submit="onSubmit" method="post" @reset="onReset" v-if="show">
+            <b-row>
+              <b-col>
+                <b-form-group
+                  id="input-group-2"
+                  label="Income:"
+                  label-for="input-2"
+                >
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.income"
+                    placeholder="Enter Income"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col>
+                <b-form-group
+                  id="input-group-2"
+                  label="Credit Score:"
+                  label-for="input-2"
+                >
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.creditScore"
+                    placeholder="Enter Credit Score"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col>
+                <b-form-group id="input-group-2" label="Debt:" label-for="input-2">
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.debt"
+                    placeholder="Enter Debt"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+            </b-row>
 
-            <b-form-group
-              id="input-group-2"
-              label="Credit Score:"
-              label-for="input-2"
-            >
-              <b-form-input
-                id="input-2"
-                v-model="form.creditScore"
-                placeholder="Enter Credit Score"
-                required
-              ></b-form-input>
-            </b-form-group>
+            <b-row>
+              <b-col>
+                <b-form-group id="input-group-2" label="Loan Term:" label-for="input-2">
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.loanTerm"
+                    placeholder="Enter Loan Term"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col>
+                <b-form-group
+                  id="input-group-2"
+                  label="Interest Rate:"
+                  label-for="input-2"
+                >
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.interestRate"
+                    placeholder="Enter Interest Rate"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col>
+                <b-form-group
+                  id="input-group-2"
+                  label="Credit Incidents:"
+                  label-for="input-2"
+                >
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.creditIncidents"
+                    placeholder="Enter Credit Incidents"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+            </b-row>
 
-            <b-form-group id="input-group-2" label="Debt:" label-for="input-2">
-              <b-form-input
-                id="input-2"
-                v-model="form.debt"
-                placeholder="Enter Debt"
-                required
-              ></b-form-input>
-            </b-form-group>
-          </b-col>
-        </b-row>
+            <b-row>
+              <b-col>
+                <b-form-group
+                  id="input-group-2"
+                  label="Home Value:"
+                  label-for="input-2"
+                >
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.homeValue"
+                    placeholder="Enter Home Value"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col>
+                <b-form-group
+                  id="input-group-2"
+                  label="Loan Amount:"
+                  label-for="input-2"
+                >
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.loanAmount"
+                    placeholder="Enter Loan Amount"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col>
+                <b-form-group id="input-group-2" label="Latitude:" label-for="input-2">
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.lat"
+                    placeholder="Enter Latitude"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+            </b-row>
 
-        <b-form-group id="input-group-2" label="Loan Term:" label-for="input-2">
-          <b-form-input
-            id="input-2"
-            v-model="form.loanTerm"
-            placeholder="Enter Loan Term"
-            required
-          ></b-form-input>
-        </b-form-group>
+            <b-row>
+              <b-col>
+                <b-form-group
+                  id="input-group-2"
+                  label="Longditude:"
+                  label-for="input-2"
+                >
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.long"
+                    placeholder="Enter Longditude"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col>
+                <b-form-group
+                  id="input-group-2"
+                  label="Median Home Value:"
+                  label-for="input-2"
+                >
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.medianHomeValue"
+                    placeholder="Enter Median Home Value"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col>
+                <b-form-group
+                  id="input-group-2"
+                  label="Median Household Income:"
+                  label-for="input-2"
+                >
+                  <b-form-input
+                    id="input-2"
+                    v-model="form.medianHouseholdIncome"
+                    placeholder="Enter Median Household Income"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+            </b-row>
+          </b-form>
+        </div>
+      </b-col>
+    </b-row>
 
-        <b-form-group
-          id="input-group-2"
-          label="Interest Rate:"
-          label-for="input-2"
-        >
-          <b-form-input
-            id="input-2"
-            v-model="form.interestRate"
-            placeholder="Enter Interest Rate"
-            required
-          ></b-form-input>
-        </b-form-group>
-
-        <b-form-group
-          id="input-group-2"
-          label="Credit Incidents:"
-          label-for="input-2"
-        >
-          <b-form-input
-            id="input-2"
-            v-model="form.creditIncidents"
-            placeholder="Enter Credit Incidents"
-            required
-          ></b-form-input>
-        </b-form-group>
-
-        <b-form-group
-          id="input-group-2"
-          label="Home Value:"
-          label-for="input-2"
-        >
-          <b-form-input
-            id="input-2"
-            v-model="form.homeValue"
-            placeholder="Enter Home Value"
-            required
-          ></b-form-input>
-        </b-form-group>
-
-        <b-form-group
-          id="input-group-2"
-          label="Loan Amount:"
-          label-for="input-2"
-        >
-          <b-form-input
-            id="input-2"
-            v-model="form.loanAmount"
-            placeholder="Enter Loan Amount"
-            required
-          ></b-form-input>
-        </b-form-group>
-
-        <b-form-group id="input-group-2" label="Latitude:" label-for="input-2">
-          <b-form-input
-            id="input-2"
-            v-model="form.lat"
-            placeholder="Enter Latitude"
-            required
-          ></b-form-input>
-        </b-form-group>
-
-        <b-form-group
-          id="input-group-2"
-          label="Longditude:"
-          label-for="input-2"
-        >
-          <b-form-input
-            id="input-2"
-            v-model="form.long"
-            placeholder="Enter Longditude"
-            required
-          ></b-form-input>
-        </b-form-group>
-
-        <b-form-group
-          id="input-group-2"
-          label="Median Home Value:"
-          label-for="input-2"
-        >
-          <b-form-input
-            id="input-2"
-            v-model="form.medianHomeValue"
-            placeholder="Enter Median Home Value"
-            required
-          ></b-form-input>
-        </b-form-group>
-
-        <b-form-group
-          id="input-group-2"
-          label="Median Household Income:"
-          label-for="input-2"
-        >
-          <b-form-input
-            id="input-2"
-            v-model="form.medianHouseholdIncome"
-            placeholder="Enter Median Household Income"
-            required
-          ></b-form-input>
-        </b-form-group>
-
-        <b-button pill type="submit" size="lg" variant="outline-primary"
+    <b-row class="mt-4 justify-content-center">
+        <b-button form="lpm-form" class="mr-2" pill type="submit" size="sm" variant="primary"
           >Submit</b-button
         >
-        <b-button pill type="reset" variant="danger">Reset</b-button>
-      </div>
-    </b-form>
-
-    <b-card class="mt-3" header="Form Data Result">
+        <b-button pill type="reset" size="sm" variant="danger">Reset</b-button>
+    </b-row>
+    <!-- <b-card class="mt-3" header="Form Data Result">
       <pre class="m-0">{{ form }}</pre>
-    </b-card>
+    </b-card> -->
+    <result-modal :result="result"></result-modal>
   </div>
 </template>
 
 <script>
+import ResultModal from "./ResultModal";
 import Vue from "vue";
 import axios from "axios";
 import VueAxios from "vue-axios";
@@ -173,6 +200,9 @@ Vue.use(VueAxios, axios);
 
 export default {
   name: "Form",
+
+  components: { ResultModal },
+
   data() {
     return {
       form: {
@@ -190,6 +220,7 @@ export default {
         medianHouseholdIncome: "30060",
       },
       show: true,
+      result: 0
     };
   },
 
@@ -228,8 +259,10 @@ export default {
           // Handle success
           console.log(response.text);
           currentObj.output = response.data;
-
-          alert(JSON.stringify(this.form));
+          // this.result = 0;
+          // this.$nextTick(() => {
+          //   this.$bvModal.show('modal-result')
+          // })
         })
         .catch(function (error) {
           currentObj.output = error;
