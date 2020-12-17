@@ -1,24 +1,54 @@
 from flask import Flask, request, redirect, url_for, flash, jsonify
 import numpy as np
-import pickle as p
+from flask_cors import CORS
+#import pickle as p
 import json
 import tensorflow as tf
+import requests
 from tensorflow import keras
 
 
+global model
+
 app = Flask(__name__)
+app.config.from_object(__name__)
 
+CORS(app, resources={r'/*': {'origins': '*'}})
 
-@app.route('/predict/', methods=['POST'])
+def parseData(data):
+    # temp = json.loads(data)
+    # print(temp)
+    lst = []
+    for key, value in data.items():
+        lst.append(float(value))
+    print(lst)
+    return [lst]
+
+@app.route('/predict/', methods=['GET','POST'])
 def makecalc():
-    data = request.get_json()
-    prediction = np.array2string(model.predict(data))
+    print("inside mackecalc")
+    response_object={'status':'success'}
+    print(request.method)
+    if (request.method=='POST'):
+        print("inside the if")
+        data = request.get_json(force=True)
+        new = parseData(data)
+        prediction = np.array2string(model.predict(new))
+        print(prediction)
+        if(str(prediction)=="[[1.]]"):
+            print("inner if")
+            response_object=json.dumps({'status':'1'})
+        elif(str(prediction)=="[[0.]]"):
+            response_object={'status':'0'}
+    return response_object 
 
-    return jsonify(prediction)
+
+# sanity check route
+
 
 if __name__ == '__main__':
-    modelfile = '../LoanPredictionModel/my_model'
-    # model = p.load(open(modelfile, 'rb'))
+    modelfile = '../flask/tempmodel.h5'
+    #model = p.load(open(modelfile, 'rb'))
     print(modelfile)
     model = tf.keras.models.load_model(modelfile)
-    app.run(debug=True, host='0.0.0.0') 
+    app.run() 
