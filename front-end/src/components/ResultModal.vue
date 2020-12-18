@@ -1,21 +1,22 @@
 <template>
-  <b-modal :content-class="`modal-result-${resultText.toLowerCase()}`" id="modal-result" hide-footer>
+  <b-modal :content-class="`modal-result-${modalClass}`" id="modal-result" hide-footer>
     <template #modal-title>
-      Result
+      <p class="modalText">LPM</p>
     </template>
     <div class="d-block text-center">
-      <h3>The Results is: </h3>
-      <p>
+      <p class="modalText">
           {{ resultText }}
       </p>
+     
     </div>
+
     <b-button class="mt-3" block @click="$bvModal.hide('modal-result')">Close</b-button>
   </b-modal>
 </template>
 <script>
+
 export default {
     name: "ResultModal",
-    
     props: {
         result: {
             type: [Number],
@@ -25,7 +26,12 @@ export default {
 
     computed: {
         resultText() {
-            return this.result === 0 ? "No" : "Yes";
+            return this.result === 0 ? "It is unlikely that this application would be accepted by the lender." : "Congratulations! Theres a good chance this application would be accepted by the lender.";
+        },
+
+        
+        modalClass(){
+          return this.result=== 0 ? "no" : "yes";
         }
     }
 }

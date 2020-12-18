@@ -8,11 +8,13 @@
               <b-col>
                 <b-form-group
                   id="input-group-2"
-                  label="Income:"
+                  class="inputLables"
+                  label="Income"
                   label-for="input-2"
                 >
                   <b-form-input
                     id="input-2"
+          
                     v-model="form.income"
                     placeholder="Enter Income"
                     required
@@ -22,7 +24,8 @@
               <b-col>
                 <b-form-group
                   id="input-group-2"
-                  label="Credit Score:"
+                  class="inputLables"
+                  label="Credit Score"
                   label-for="input-2"
                 >
                   <b-form-input
@@ -34,9 +37,10 @@
                 </b-form-group>
               </b-col>
               <b-col>
-                <b-form-group id="input-group-2" label="Debt:" label-for="input-2">
+                <b-form-group id="input-group-2"   class="inputLables" label="Debt:" label-for="input-2">
                   <b-form-input
                     id="input-2"
+                  
                     v-model="form.debt"
                     placeholder="Enter Debt"
                     required
@@ -47,7 +51,7 @@
 
             <b-row>
               <b-col>
-                <b-form-group id="input-group-2" label="Loan Term:" label-for="input-2">
+                <b-form-group id="input-group-2" class="inputLables" label="Loan Term" label-for="input-2">
                   <b-form-input
                     id="input-2"
                     v-model="form.loanTerm"
@@ -59,8 +63,9 @@
               <b-col>
                 <b-form-group
                   id="input-group-2"
-                  label="Interest Rate:"
+                  label="Interest Rate"
                   label-for="input-2"
+                  class="inputLables"
                 >
                   <b-form-input
                     id="input-2"
@@ -73,8 +78,9 @@
               <b-col>
                 <b-form-group
                   id="input-group-2"
-                  label="Credit Incidents:"
+                  label="Credit Incidents"
                   label-for="input-2"
+                  class="inputLables"
                 >
                   <b-form-input
                     id="input-2"
@@ -90,8 +96,9 @@
               <b-col>
                 <b-form-group
                   id="input-group-2"
-                  label="Home Value:"
+                  label="Home Value"
                   label-for="input-2"
+                  class="inputLables"
                 >
                   <b-form-input
                     id="input-2"
@@ -104,8 +111,9 @@
               <b-col>
                 <b-form-group
                   id="input-group-2"
-                  label="Loan Amount:"
+                  label="Loan Amount"
                   label-for="input-2"
+                  class="inputLables"
                 >
                   <b-form-input
                     id="input-2"
@@ -116,7 +124,7 @@
                 </b-form-group>
               </b-col>
               <b-col>
-                <b-form-group id="input-group-2" label="Latitude:" label-for="input-2">
+                <b-form-group id="input-group-2" class="inputLables" label="Latitude" label-for="input-2">
                   <b-form-input
                     id="input-2"
                     v-model="form.lat"
@@ -131,13 +139,14 @@
               <b-col>
                 <b-form-group
                   id="input-group-2"
-                  label="Longditude:"
+                  label="Longitude"
                   label-for="input-2"
+                  class="inputLables"
                 >
                   <b-form-input
                     id="input-2"
                     v-model="form.long"
-                    placeholder="Enter Longditude"
+                    placeholder="Enter Longitude"
                     required
                   ></b-form-input>
                 </b-form-group>
@@ -145,8 +154,9 @@
               <b-col>
                 <b-form-group
                   id="input-group-2"
-                  label="Median Home Value:"
+                  label="Median Home Value"
                   label-for="input-2"
+                  class="inputLables"
                 >
                   <b-form-input
                     id="input-2"
@@ -159,8 +169,9 @@
               <b-col>
                 <b-form-group
                   id="input-group-2"
-                  label="Median Household Income:"
+                  label="Median Household Income"
                   label-for="input-2"
+                  class="inputLables"
                 >
                   <b-form-input
                     id="input-2"
@@ -177,10 +188,9 @@
     </b-row>
 
     <b-row class="mt-4 justify-content-center">
-        <b-button form="lpm-form" class="mr-2" pill type="submit" size="sm" variant="primary"
-          >Submit</b-button
+        <b-button lg="4"  form="lpm-form" class="pb-2" squared type="submit" size="lg" variant="info" >Submit</b-button
         >
-        <b-button pill type="reset" size="sm" variant="danger">Reset</b-button>
+       
     </b-row>
     <!-- <b-card class="mt-3" header="Form Data Result">
       <pre class="m-0">{{ form }}</pre>
@@ -232,9 +242,9 @@ export default {
       //var formData =JSON.stringify(this.form)
       const headers = {
         "Content-Type": "application/json",
-        "Accept-Charset": "UTF-8",
         "Access-Control-Allow-Origin": "true",
       };
+       console.log("before axios")
 
       axios
         .post(
@@ -255,11 +265,11 @@ export default {
           },
           { headers }
         )
-        .then(function (response) {
-          // Handle success
-          //console.log(response);
+       
+        .then(response => {
+          console.log(response)
           const {status} = response.data
-          console.log(status)
+          //console.log(status)
            this.result = status;
            this.$nextTick(() => {
              this.$bvModal.show('modal-result')
@@ -267,6 +277,7 @@ export default {
         })
         .catch(function (error) {
           currentObj.output = error;
+          console.log(error)
         });
     },
 

@@ -1,6 +1,6 @@
 <template>
   <div class="pt-4" id="app">
-    <h1 class="text-center">LPM</h1>
+    <h1 class="text-center">Loan Prediction Model</h1>
     <Form />
   </div>
 </template>
@@ -11,6 +11,8 @@ import axios from "axios";
 import VueAxios from "vue-axios";
 //import { BootstrapVue } from "bootstrap-vue";
 import Form from "./components/Form";
+import { IconsPlugin } from 'bootstrap-vue';
+Vue.use(IconsPlugin)
 
 Vue.use(VueAxios, axios);
 export default {
@@ -29,28 +31,51 @@ export default {
  
   color: #2c3e50;
   background-color: #f3e5f5;
+  background-image: linear-gradient(rgba(202, 154, 207, 0.705),  #f3e5f5);
 
   height: 100vh;
 
   overflow-x: hidden;
 }
-
+.inputLables{
+  font-weight: bold!important;
+}
 .card {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary {
+.modalButton{
+  background-color:white !important;
+  
+}
+.modalText{
+  color:black;
+  align-items: center!important;
+}
+.btn-info{
   background-color: #8e24aa !important;
 }
 
 .modal-result-yes {
-  background-color: #00e676 !important;
+  
   color: #fff;
+}
+
+#modal-title{
+  align-content: center;
 }
 
 .modal-result-no {
   background-color: #b71c1c !important;
   color: #fff;
+}
+
+.imageSource-no{
+  background-image: url('./assets/cross.png');
+}
+
+.imageSource-yes{
+  background-image: url('./assets/check.png');
 }
 
 .modal-backdrop {
