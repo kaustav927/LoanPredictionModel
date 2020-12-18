@@ -37,7 +37,7 @@
                 </b-form-group>
               </b-col>
               <b-col>
-                <b-form-group id="input-group-2"   class="inputLables" label="Debt:" label-for="input-2">
+                <b-form-group id="input-group-2"   class="inputLables" label="Debt" label-for="input-2">
                   <b-form-input
                     id="input-2"
                   
