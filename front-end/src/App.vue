@@ -1,4 +1,4 @@
-<template>
+<template class="align-content-center">
   <div class="pt-4" id="app">
     <h1 class="text-center">Loan Prediction Model</h1>
     <Form />
@@ -32,11 +32,20 @@ export default {
   color: #2c3e50;
   background-color: #f3e5f5;
   background-image: linear-gradient(rgba(202, 154, 207, 0.705),  #f3e5f5);
+  
 
   height: 100vh;
 
   overflow-x: hidden;
 }
+
+.ribbon{
+    background-image: url("./assets/finastra_ribbon.png");
+    background-repeat: no-repeat;
+    padding-bottom: 30%;
+  }
+  
+
 .inputLables{
   font-weight: bold!important;
 }
@@ -66,7 +75,7 @@ export default {
 }
 
 .modal-result-no {
-  background-color: #b71c1c !important;
+ 
   color: #fff;
 }
 

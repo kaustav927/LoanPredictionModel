@@ -187,11 +187,13 @@
       </b-col>
     </b-row>
 
-    <b-row class="mt-4 justify-content-center">
+    <b-row class="mt-4 justify-content-center ribbon">
         <b-button lg="4"  form="lpm-form" class="pb-2" squared type="submit" size="lg" variant="info" >Submit</b-button
         >
        
     </b-row>
+    
+
     <!-- <b-card class="mt-3" header="Form Data Result">
       <pre class="m-0">{{ form }}</pre>
     </b-card> -->
@@ -202,6 +204,7 @@
 <script>
 import ResultModal from "./ResultModal";
 import Vue from "vue";
+
 import axios from "axios";
 import VueAxios from "vue-axios";
 import { BootstrapVue } from "bootstrap-vue";
@@ -269,8 +272,10 @@ export default {
         .then(response => {
           console.log(response)
           const {status} = response.data
+          console.log(status)
           //console.log(status)
-           this.result = status;
+           this.result = parseInt(status);
+
            this.$nextTick(() => {
              this.$bvModal.show('modal-result')
            })
