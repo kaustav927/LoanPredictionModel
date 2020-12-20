@@ -26,7 +26,7 @@ export default {
 
     computed: {
         resultText() {
-            return this.result === 0 ? "It is unlikely that this application would be accepted by the lender." : "Congratulations! Theres a good chance this application would be accepted by the lender.";
+            return this.result === 0 ? "It is unlikely that this application would be accepted by the lender." : "Congratulations! There's a good chance this application would be accepted by the lender.";
         },
 
         

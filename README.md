@@ -7,10 +7,15 @@ npm install
 OR
 yarn install
 
-### spin up server with hot reload (npm run / yarn)
+### spin up front-end server with hot reload (npm run / yarn)
+cd front-end
 npm run serve
 OR
 Yarn serve 
+
+### spin up back-end server 
+cd flask 
+python3 api.py
 
 ### Python Modules
 pip3 install tensorflow
