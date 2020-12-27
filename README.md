@@ -12,6 +12,7 @@ cd front-end
 npm run serve  
 OR  
 Yarn serve  
+http://localhost:8080
 
 ### Spin up back-end server 
 cd flask   
