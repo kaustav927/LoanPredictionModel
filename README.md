@@ -7,13 +7,13 @@ npm install
 OR  
 yarn install  
 
-### spin up front-end server with hot reload (npm run / yarn)
+### Spin up front-end server with hot reload (npm run / yarn)
 cd front-end  
 npm run serve  
 OR  
 Yarn serve  
 
-### spin up back-end server 
+### Spin up back-end server 
 cd flask   
 python3 api.py  
 
