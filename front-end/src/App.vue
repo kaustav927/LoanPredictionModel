@@ -183,4 +183,12 @@ input:focus {
   }
 }
 
+.no-icon {
+  color: #c72248 !important;
+}
+
+.yes-icon {
+  color: #4ab846 !important;
+}
+
 </style>
