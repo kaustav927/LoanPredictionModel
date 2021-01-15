@@ -126,12 +126,13 @@ input:focus {
 }
 
 .page-footer {
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   width: 100%;
   background-color: #424242;
   color: white;
   font-weight: bold;
+  overflow: hidden;
 }
 
 .page-footer  a {
