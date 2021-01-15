@@ -52,6 +52,7 @@ export default {
   background-size: contain;
   height: 100vh;
   overflow-x: hidden;
+  padding-bottom: 35px;
 } 
 
 .form-control {
