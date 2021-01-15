@@ -5,7 +5,7 @@
         <div class="card p-4">
           <b-form id="lpm-form" @submit="onSubmit" method="post" @reset="onReset" v-if="show">
             <b-row>
-              <b-col>
+              <b-col cols="12" lg="4">
                 <b-form-group
                   id="input-group-2"
                   class="inputLables"
@@ -21,7 +21,7 @@
                   ></b-form-input>
                 </b-form-group>
               </b-col>
-              <b-col>
+              <b-col cols="12" lg="4">
                 <b-form-group
                   id="input-group-2"
                   class="inputLables"
@@ -36,7 +36,7 @@
                   ></b-form-input>
                 </b-form-group>
               </b-col>
-              <b-col>
+              <b-col cols="12" lg="4">
                 <b-form-group id="input-group-2"   class="inputLables" label="Debt" label-for="input-2">
                   <b-form-input
                     id="input-2"
@@ -50,7 +50,7 @@
             </b-row>
 
             <b-row>
-              <b-col>
+              <b-col cols="12" lg="4">
                 <b-form-group id="input-group-2" class="inputLables" label="Loan Term" label-for="input-2">
                   <b-form-input
                     id="input-2"
@@ -60,7 +60,7 @@
                   ></b-form-input>
                 </b-form-group>
               </b-col>
-              <b-col>
+              <b-col cols="12" lg="4">
                 <b-form-group
                   id="input-group-2"
                   label="Interest Rate"
@@ -75,7 +75,7 @@
                   ></b-form-input>
                 </b-form-group>
               </b-col>
-              <b-col>
+              <b-col cols="12" lg="4">
                 <b-form-group
                   id="input-group-2"
                   label="Credit Incidents"
@@ -93,7 +93,7 @@
             </b-row>
 
             <b-row>
-              <b-col>
+              <b-col cols="12" lg="4">
                 <b-form-group
                   id="input-group-2"
                   label="Home Value"
@@ -108,7 +108,7 @@
                   ></b-form-input>
                 </b-form-group>
               </b-col>
-              <b-col>
+              <b-col cols="12" lg="4">
                 <b-form-group
                   id="input-group-2"
                   label="Loan Amount"
@@ -123,7 +123,7 @@
                   ></b-form-input>
                 </b-form-group>
               </b-col>
-              <b-col>
+              <b-col cols="12" lg="4">
                 <b-form-group id="input-group-2" class="inputLables" label="Latitude" label-for="input-2">
                   <b-form-input
                     id="input-2"
@@ -136,7 +136,7 @@
             </b-row>
 
             <b-row>
-              <b-col>
+              <b-col cols="12" lg="4">
                 <b-form-group
                   id="input-group-2"
                   label="Longitude"
@@ -151,7 +151,7 @@
                   ></b-form-input>
                 </b-form-group>
               </b-col>
-              <b-col>
+              <b-col cols="12" lg="4">
                 <b-form-group
                   id="input-group-2"
                   label="Median Home Value"
@@ -166,7 +166,7 @@
                   ></b-form-input>
                 </b-form-group>
               </b-col>
-              <b-col>
+              <b-col cols="12" lg="4">
                 <b-form-group
                   id="input-group-2"
                   label="Median Household Income"
