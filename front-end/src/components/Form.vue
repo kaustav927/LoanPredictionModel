@@ -187,10 +187,15 @@
       </b-col>
     </b-row>
 
-    <b-row class="mt-4 justify-content-center ribbon">
-        <b-button lg="4"  form="lpm-form" class="pb-2" squared type="submit" size="lg" variant="info" >Submit</b-button
-        >
-       
+    <b-row class="mt-4 justify-content-center">
+      <b-col cols="2">
+        <b-button :disabled="!isValid" form="lpm-form" class="w-100" squared type="submit" size="lg" variant="info">
+          <div v-if="loading" class="loader"></div>
+          <span v-else>
+            Submit
+          </span>
+        </b-button>
+      </b-col>
     </b-row>
     
 
@@ -204,6 +209,8 @@
 <script>
 import ResultModal from "./ResultModal";
 import Vue from "vue";
+import { validationMixin } from "vuelidate";
+import { required } from "vuelidate/lib/validators";
 
 import axios from "axios";
 import VueAxios from "vue-axios";
@@ -215,6 +222,25 @@ export default {
   name: "Form",
 
   components: { ResultModal },
+
+  mixins: [validationMixin],
+
+  validations: {
+    form: {
+      income: { required },
+      creditScore: { required },
+      debt: { required },
+      loanTerm: { required },
+      interestRate: { required },
+      creditIncidents: { required },
+      homeValue: { required },
+      loanAmount: { required },
+      lat: { required },
+      long: { required },
+      medianHomeValue: { required },
+      medianHouseholdIncome: { required }
+    }
+  },
 
   data() {
     return {
@@ -233,14 +259,22 @@ export default {
         medianHouseholdIncome: "30060",
       },
       show: true,
-      result: 0
+      result: 0,
+      loading: false
     };
+  },
+
+  computed: {
+    isValid() {
+      return !this.$v.$invalid;
+    }
   },
 
   methods: {
     onSubmit(e) {
       e.preventDefault();
       let currentObj = this;
+      this.loading = true;
       //var result = [[]];
       //var formData =JSON.stringify(this.form)
       const headers = {
@@ -274,15 +308,16 @@ export default {
           const {status} = response.data
           console.log(status)
           //console.log(status)
-           this.result = parseInt(status);
-
-           this.$nextTick(() => {
+          this.result = parseInt(status);
+          this.loading = false;
+           this.$nextTick(() => { 
              this.$bvModal.show('modal-result')
            })
         })
         .catch(function (error) {
           currentObj.output = error;
-          console.log(error)
+          console.log(error);
+          this.loading = false;
         });
     },
 
