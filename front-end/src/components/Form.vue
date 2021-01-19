@@ -285,7 +285,7 @@ export default {
 
       axios
         .post(
-          "http://127.0.0.1:5000/predict/",
+          "http://johans240909.pythonanywhere.com/predict/",
           {
             income: this.form.income,
             creditScore: this.form.creditScore,

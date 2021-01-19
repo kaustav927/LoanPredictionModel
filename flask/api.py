@@ -51,5 +51,5 @@ if __name__ == '__main__':
     modelfile = "./model/"
     #model = p.load(open(modelfile, 'rb'))
     print(modelfile)
-    model = tf.keras.models.load_model(modelfile)
+    model = tf.keras.models.load_weight(modelfile)
     app.run() 
