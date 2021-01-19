@@ -188,7 +188,7 @@
     </b-row>
 
     <b-row class="mt-4 justify-content-center">
-      <b-col cols="2">
+      <b-col cols="9" lg="2">
         <b-button :disabled="!isValid" form="lpm-form" class="w-100" squared type="submit" size="lg" variant="info">
           <div v-if="loading" class="loader"></div>
           <span v-else>

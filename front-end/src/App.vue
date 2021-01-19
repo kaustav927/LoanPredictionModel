@@ -2,7 +2,7 @@
   <div class="pt-4 ribbon" id="app">
     <i @click="showInfoModal" class="fa fa-info-circle help-icon"></i>
     <div class="d-flex justify-content-center">
-      <img src="logo.png" class="img-responsive" width="300px" alt="">
+      <img src="logo.png" class="img-responsive" width="300px" height="300px" alt="LPM">
     </div>
     <Form />
     <Footer />
@@ -52,7 +52,7 @@ export default {
   background-size: contain;
   height: 100vh;
   overflow-x: hidden;
-  padding-bottom: 35px;
+  padding-bottom: 70px;
 } 
 
 .form-control {
@@ -124,6 +124,7 @@ input:focus {
   top: 20px;
   right: 20px;
   cursor: pointer;
+  font-size:50px; 
 }
 
 .page-footer {

@@ -5,7 +5,7 @@
     </template>
     <div class="d-block text-center">
       <div class="d-flex flex-row justify-content-center">
-        <i class="fa" :class="iconClass" ></i>
+        <i style="font-size:70px" class="fa" :class="iconClass" ></i>
       </div>
       <p class="modalText">
           {{ resultText }}
