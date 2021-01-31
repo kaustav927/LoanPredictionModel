@@ -12,7 +12,7 @@
 
         
             <a target="_blank" href="https://devpost.com/software/ml-in-ml?ref_content=user-portfolio&ref_feature=in_progress">
-                <i class="fa fa-code"></i>
+                <i class="fa fa-times"></i>
             </a>
         </b-row>
     </div>
