@@ -313,7 +313,7 @@ export default {
              this.$bvModal.show('modal-result')
            })
         })
-        .catch(function (error) {
+        .catch(error=> {
           currentObj.output = error;
           console.log(error);
           this.loading = false;
