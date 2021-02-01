@@ -284,7 +284,7 @@ export default {
        console.log("before axios")
 
       axios
-        .post("https://loan-prediction-mode-backend.herokuapp.com",
+        .post("https://lpm-1.herokuapp.com/",
           {
             income: this.form.income,
             creditScore: this.form.creditScore,
